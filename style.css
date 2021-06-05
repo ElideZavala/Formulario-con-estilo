@@ -22,7 +22,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3); 
 	padding: 20px 40px;
 	border-radius: 10px;
-	box-shadow:7px 7px 60px #000;
+	box-shadow:7px 7px 70px #000;
 }
 
 .container h1 {
@@ -83,6 +83,13 @@ body {
 	color: #fff;
 }
 
+
+.form-control input:focus,
+.form-control input:valid {
+	outline: 0;
+	border-bottom-color: rebeccapurple;
+}
+
 .form-control label {
 	position: absolute;
 	top: 15px;
@@ -90,7 +97,15 @@ body {
 	font-size: 20px;
 }
 
-.form-control input:focus,
-.form-control input:valid {
-	outline: 0;
+.form-control label span{
+	display: inline-block;
+	font-size: 20px;
+	min-width: 5px;
+	transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+	color: rebeccapurple;
+	transform: translateY(-30px);
 }
